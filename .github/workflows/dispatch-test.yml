@@ -1,0 +1,12 @@
+name: Test the dispatch trigger
+
+on:
+  repository_dispatch:
+    types: [trigger-from-webhook]
+
+jobs:
+  run-fake-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Script
+        run: echo "This Workflow was triggered via a webhook"
